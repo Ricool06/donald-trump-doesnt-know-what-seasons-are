@@ -15,18 +15,7 @@ When('I send a request to the root endpoint', () => {
     });
 });
 
-Then('I should see the following response:', (docString, callback) => {
+Then('I should see the following response:', (docString) => {
   this.responder
-    .expect(200, {
-      data: {
-        help: 'Use this API somehow',
-      },
-    })
-    .end((err) => {
-      if (err) {
-        callback(err);
-      } else {
-        callback();
-      }
-    });
+    .expect(200, JSON.parse(docString));
 });

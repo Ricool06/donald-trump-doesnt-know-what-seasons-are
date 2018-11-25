@@ -8,8 +8,8 @@ Feature: root
         Then I should see the following response:
         """
         {
-            "data": {
-                "help": "Use this API somehow"
-            }
+          "data": {
+            "help": "Use this API somehow"
+          }
         }
         """

@@ -4,7 +4,7 @@
   "description": "A statistical analysis of the president of the United States of America's lack of knowledge on seasons.",
   "main": "index.js",
   "scripts": {
-    "e2e": "cucumber-js",
+    "e2e": "cucumber-js --exit",
     "test": "jest",
     "lint": "eslint ./"
   },
