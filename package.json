@@ -1,0 +1,42 @@
+{
+  "name": "donald-trump-doesnt-know-what-seasons-are",
+  "version": "1.0.0",
+  "description": "A statistical analysis of the president of the United States of America's lack of knowledge on seasons.",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "cucumber-js",
+    "test": "jest",
+    "lint": "eslint ./"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "clearMocks": true,
+    "coverageDirectory": "coverage"
+  },
+  "keywords": [
+    "trump",
+    "donny",
+    "boi",
+    "donald",
+    "bad",
+    "hair",
+    "seasons"
+  ],
+  "author": "Ricool06",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.2.2",
+    "body-parser": "^1.18.3",
+    "cucumber": "^5.0.2",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "puppeteer": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
+  }
+}
