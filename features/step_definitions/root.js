@@ -1,10 +1,10 @@
 const { BeforeAll, When, Then } = require('cucumber');
 const request = require('supertest');
-const app = require('../../src/app')();
+const app = require('../../server');
 
 BeforeAll(() => {
   this.requester = request(app);
-  this.responder = undefined;
+  this.responder = null;
 });
 
 When('I send a request to the root endpoint', () => {
@@ -15,7 +15,8 @@ When('I send a request to the root endpoint', () => {
     });
 });
 
-Then('I should see the following response:', (docString) => {
+Then('I should see the following response:', (docString, done) => {
   this.responder
-    .expect(200, JSON.parse(docString));
+    .expect(200, JSON.parse(docString))
+    .end(err => done(err));
 });

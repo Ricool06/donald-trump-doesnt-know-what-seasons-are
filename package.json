@@ -30,7 +30,9 @@
     "cucumber": "^5.0.2",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
-    "puppeteer": "^1.10.0"
+    "inversify": "^5.0.1",
+    "puppeteer": "^1.10.0",
+    "reflect-metadata": "^0.1.12"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
