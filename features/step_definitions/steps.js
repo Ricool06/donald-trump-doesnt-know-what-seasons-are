@@ -7,11 +7,11 @@ BeforeAll(() => {
   this.responder = null;
 });
 
-When('I send a request to the root endpoint', () => {
+When('I request the following data from {string}:', (endpoint, query) => {
   this.responder = this.requester
-    .post('/graphql')
+    .post(endpoint)
     .send({
-      query: '{ help }',
+      query,
     });
 });
 

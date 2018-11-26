@@ -1,10 +1,15 @@
-Feature: root
+Feature: help
     As a user
-    I want to be shown a help message at the root
+    I want to be shown a help message
     So that I know how to use the API
 
-    Scenario: GET /
-        When I send a request to the root endpoint
+    Scenario: GET help
+        When I request the following data from "/graphql":
+        """
+        {
+          help
+        }
+        """
         Then I should see the following response:
         """
         {
