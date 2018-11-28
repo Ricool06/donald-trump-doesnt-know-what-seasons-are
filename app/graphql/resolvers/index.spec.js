@@ -6,7 +6,7 @@ const Resolvers = require('.');
 describe('resolvers', () => {
   let container;
 
-  beforeEach(() => {
+  beforeAll(() => {
     container = new Container();
     container.bind(TYPES.Resolvers).to(Resolvers);
   });

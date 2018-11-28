@@ -10,8 +10,7 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "clearMocks": true,
-    "coverageDirectory": "coverage"
+    "clearMocks": true
   },
   "keywords": [
     "trump",
@@ -26,15 +25,22 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^2.2.2",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
     "cucumber": "^5.0.2",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
     "inversify": "^5.0.1",
+    "nock": "^10.0.2",
     "puppeteer": "^1.10.0",
     "reflect-metadata": "^0.1.12"
   },
   "devDependencies": {
+    "@pollyjs/adapter-puppeteer": "^1.2.0",
+    "@pollyjs/core": "^1.2.0",
+    "@pollyjs/persister-fs": "^1.2.0",
+    "chai": "^4.2.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",

@@ -21,7 +21,8 @@ class Application {
     });
     apolloServer.applyMiddleware({ app });
 
-    app.listen(portNumber);
+    // eslint-disable-next-line no-console
+    app.listen(portNumber, () => console.log(`Starting server on port ${portNumber}`));
     return app;
   }
 }

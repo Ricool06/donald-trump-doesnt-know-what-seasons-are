@@ -6,7 +6,7 @@ const helpResolver = require('./help');
 describe('HelpResolver', () => {
   let container;
 
-  beforeEach(() => {
+  beforeAll(() => {
     container = new Container();
     container.bind(TYPES.HelpResolver).toConstantValue(helpResolver);
   });

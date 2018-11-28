@@ -59,7 +59,7 @@ describe('Application', () => {
     expect(ApolloServer.mock.instances[0].applyMiddleware)
       .toHaveBeenCalledWith({ app: mockExpressApp });
 
-    expect(mockExpressApp.listen).toHaveBeenCalledWith(testPort);
+    expect(mockExpressApp.listen).toHaveBeenCalledWith(testPort, expect.any(Function));
 
     expect(actualExpressApp).toBe(mockExpressApp);
   });
