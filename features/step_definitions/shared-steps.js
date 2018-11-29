@@ -2,11 +2,14 @@ const {
   BeforeAll, AfterAll, When, Then,
 } = require('cucumber');
 const nock = require('nock');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 const nockFixturesDirectory = require('../../nock-fixtures');
 
-BeforeAll(async () => {
-  this.responder = null;
+chai.use(chaiHttp);
+const { expect } = chai;
 
+BeforeAll(async () => {
   nock.back.fixtures = nockFixturesDirectory;
   nock.back.setMode('record');
 
@@ -25,16 +28,20 @@ AfterAll(() => {
   this.nockDone();
 });
 
-When('I request the following data from {string}:', function (endpoint, query) {
-  this.responder = this.requester
+When('I request the following data from {string}:', function (endpoint, query, done) {
+  this.requester
     .post(endpoint)
-    .send({
-      query,
+    .send({ query })
+    .end((err, res) => {
+      this.responseAndError = { err, res };
+      done();
     });
 });
 
-Then('I should see the following response:', function (docString, done) {
-  this.responder
-    .expect(200, JSON.parse(docString))
-    .end(err => done(err));
+Then('I should see the following response:', function (docString) {
+  const { err, res } = this.responseAndError;
+  expect(err).to.be.null;
+  expect(res).to.have.status(200);
+  expect(res).to.be.json;
+  expect(res.body).to.deep.equal(JSON.parse(docString));
 });

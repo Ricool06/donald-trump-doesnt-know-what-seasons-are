@@ -3,7 +3,7 @@ Feature: help
     I want to be shown a help message
     So that I know how to use the API
 
-    Scenario: GET help
+    Scenario: Get help text
         When I request the following data from "/graphql":
         """
         {

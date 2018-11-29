@@ -1,10 +1,12 @@
 const { setWorldConstructor } = require('cucumber');
-const request = require('supertest');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 const app = require('../../server');
 
 function World() {
-  this.requester = request(app);
-  this.responder = null;
+  chai.use(chaiHttp);
+  this.requester = chai.request(app);
+  this.responseAndError = null;
 }
 
 setWorldConstructor(World);
