@@ -41,7 +41,7 @@ When('I request the following data from {string}:', function (endpoint, query, d
 Then('I should see the following response:', function (docString) {
   const { err, res } = this.responseAndError;
   expect(err).to.be.null;
-  expect(res).to.have.status(200);
+  expect(res).to.have.status(200, 'status');
   expect(res).to.be.json;
   expect(res.body).to.deep.equal(JSON.parse(docString));
 });
